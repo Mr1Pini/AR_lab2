@@ -1,16 +1,9 @@
-// vite.config.js
-import basicSsl from '@vitejs/plugin-basic-ssl'
+import { defineConfig } from 'vite';
+import basicSsl from '@vitejs/plugin-basic-ssl';
 
-export default {
+export default defineConfig({
+  base: '/AR_lab2/', 
   plugins: [
-    basicSsl({
-      base: 'https://github.com/Mr1Pini/AR_lab2.git',
-      /** name of certification */
-      name: 'test',
-      /** custom trust domains */
-      domains: ['*.custom.com'],
-      /** custom certification directory */
-      certDir: '/Users/.../.devServer/cert',
-    }),
-  ],
-}
+    basicSsl()
+  ]
+});

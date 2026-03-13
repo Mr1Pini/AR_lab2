@@ -1,0 +1,252 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 967,
+      "max": [
+        4.0298919677734375,
+        0.47475045919418335,
+        0.47475072741508484
+      ],
+      "min": [
+        0.0016031265258789063,
+        -0.4747505784034729,
+        -0.4747505187988281
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 11604,
+      "componentType": 5126,
+      "count": 967,
+      "max": [
+        0.985919177532196,
+        0.99313884973526,
+        0.9931389689445496
+      ],
+      "min": [
+        -1.0,
+        -0.99313884973526,
+        -0.9931387901306152
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 967,
+      "max": [
+        0.8199858665466309,
+        0.6145775318145752
+      ],
+      "min": [
+        0.17884306609630585,
+        0.38100501894950867
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 4020,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Kitsu (https://sketchfab.com/rajack1021)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/roxie-rootbeer-25130a2b0d234a4dbf1c3ed93d6760d2",
+      "title": "Roxie Rootbeer"
+    },
+    "generator": "Sketchfab-17.3.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 16080,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7736,
+      "byteOffset": 16080,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 23208,
+      "byteOffset": 23816,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 47024,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_specular"
+  ],
+  "images": [
+    {
+      "uri": "textures/MI_FoodTrash_baseColor.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "specularFactor": 0.8030500664382977
+        }
+      },
+      "name": "MI_FoodTrash",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.608001852958028,
+        "roughnessFactor": 0.44685545708329777
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Remodeled Bottle_MI_FoodTrash_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "a7cd6a1e821f4f75ad4457643a757a53.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        7.549789970973109e-06,
+        99.99999999999955,
+        5.960465176979568e-06,
+        0.0,
+        1.6292068416579042e-05,
+        5.960463944632011e-06,
+        -99.9999999999985,
+        0.0,
+        -99.9999999999984,
+        7.549790942418255e-06,
+        -1.6292067961387602e-05,
+        0.0,
+        1.1015293563872242e-16,
+        0.0,
+        2.4458865075232521e-32,
+        1.0
+      ],
+      "name": "Remodeled Bottle"
+    },
+    {
+      "mesh": 0,
+      "name": "Remodeled Bottle_MI_FoodTrash_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ]
+}
