@@ -53,7 +53,7 @@ function init() {
     modelPaths.forEach((path, index) => {
         loader.load(path, function (gltf) {
             const model = gltf.scene;
-            model.scale.set(1, 1, 1); 
+            model.scale.set(0.2, 0.2, 0.2);
             // Записуємо модель чітко на її місце в масиві, щоб зберегти порядок
             loadedModels[index] = model; 
             console.log(`Модель ${path} завантажена на позицію ${index}`);
