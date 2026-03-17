@@ -1,13 +1,32 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ar lab 2</title>
-    <script type="module" crossorigin src="/AR_lab2/assets/index-BlLqi6Lu.js"></script>
-    <link rel="stylesheet" crossorigin href="/AR_lab2/assets/index-Citco5MW.css">
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AR Лабораторні</title>
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; font-family: sans-serif; background: #1e1e1e; color: white;}
     
-  </body>
+    /* Стилі для меню */
+    #menu { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; gap: 15px; }
+    .btn { padding: 15px 30px; font-size: 18px; border: none; border-radius: 10px; background: #4caf50; color: white; cursor: pointer; width: 80%; max-width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: 0.2s;}
+    .btn:active { transform: scale(0.95); }
+    
+    /* Кнопка повернення назад (буде з'являтися в AR) */
+    .back-btn { position: absolute; top: 15px; left: 15px; z-index: 1000; padding: 10px 15px; background: rgba(0,0,0,0.6); color: white; border: none; border-radius: 5px; cursor: pointer; display: none; font-size: 16px; }
+  </style>
+  <script type="module" crossorigin src="/AR_lab2/assets/index-X5c_yMrd.js"></script>
+</head>
+<body>
+  <button id="backBtn" class="back-btn" onclick="window.location.href='?'">🔙 В меню</button>
+  
+  <div id="menu">
+    <h2>Оберіть завдання</h2>
+    <button class="btn" onclick="window.location.href='?task=1'">Завдання 1</button>
+    <button class="btn" onclick="window.location.href='?task=2'">Завдання 2</button>
+    <button class="btn" onclick="window.location.href='?task=3'">Завдання 3</button>
+    <button class="btn" onclick="window.location.href='?task=4'">Завдання 4 (AR Стіл)</button>
+  </div>
+
+</body>
 </html>
