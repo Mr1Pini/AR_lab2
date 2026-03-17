@@ -9,8 +9,10 @@ let reticle;
 let hitTestSource = null;
 let hitTestSourceRequested = false;
 
-// Масив, де будуть зберігатися всі наші завантажені моделі
+// Масив для збереження моделей
 let loadedModels = [];
+// Змінна, яка запам'ятовує, чия зараз черга з'являтися
+let currentSpawnIndex = 0; 
 
 init();
 animate();
@@ -39,24 +41,24 @@ function init() {
 
     document.body.appendChild(ARButton.createButton(renderer, { requiredFeatures: ['hit-test'] }));
 
-    // --- ЗАВАНТАЖЕННЯ ВСІХ ТРЬОХ МОДЕЛЕЙ ---
     const loader = new GLTFLoader();
     
-    // Список шляхів до ваших моделей
+    // Жорстко задаємо порядок: 0 - Фастфуд, 1 - Пиво, 2 - Тортик
     const modelPaths = [
-        'models/cake/scene.gltf',
-        'models/beer/scene.gltf',
-        'models/fastfood/scene.gltf'
+        'models/fastfood/stylized_fastfood_set.glb',
+        'models/beer/roxie_rootbeer.glb',
+        'models/cake/valentines_birthday_ice_cream_cake.glb'
     ];
 
-    modelPaths.forEach(path => {
+    modelPaths.forEach((path, index) => {
         loader.load(path, function (gltf) {
             const model = gltf.scene;
-            model.scale.set(1, 1, 1); // Масштаб (змініть на 0.1, якщо моделі гігантські)
-            loadedModels.push(model); // Додаємо завантажену модель у наш масив
-            console.log(`Модель ${path} успішно завантажена!`);
+            model.scale.set(1, 1, 1); 
+            // Записуємо модель чітко на її місце в масиві, щоб зберегти порядок
+            loadedModels[index] = model; 
+            console.log(`Модель ${path} завантажена на позицію ${index}`);
         }, undefined, function (error) {
-            console.error(`Помилка завантаження моделі ${path}:`, error);
+            console.error(`Помилка завантаження ${path}:`, error);
         });
     });
 
@@ -75,16 +77,25 @@ function init() {
 }
 
 function onSelect() {
-    // Якщо приціл бачить підлогу І хоча б одна модель вже завантажилась
-    if (reticle.visible && loadedModels.length > 0) {
+    // Якщо приціл бачить підлогу І потрібна нам модель вже встигла завантажитися
+    if (reticle.visible && loadedModels[currentSpawnIndex]) {
         
-        // Вибираємо ВИПАДКОВУ модель з нашого масиву
-        const randomIndex = Math.floor(Math.random() * loadedModels.length);
-        const randomModel = loadedModels[randomIndex].clone();
+        // Беремо модель строго по черзі
+        const modelToSpawn = loadedModels[currentSpawnIndex].clone();
         
         // Ставимо копію на координати прицілу
-        randomModel.position.setFromMatrixPosition(reticle.matrix);
-        scene.add(randomModel);
+        modelToSpawn.position.setFromMatrixPosition(reticle.matrix);
+        scene.add(modelToSpawn);
+
+        // Переходимо до наступного об'єкта
+        currentSpawnIndex++;
+        
+        // Якщо ми поставили тортик (останній індекс), починаємо знову з фастфуду
+        if (currentSpawnIndex >= loadedModels.length) {
+            currentSpawnIndex = 0;
+        }
+    } else if (reticle.visible) {
+        console.log("Модель ще завантажується, зачекайте...");
     }
 }
 
