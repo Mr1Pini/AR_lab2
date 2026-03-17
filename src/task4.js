@@ -45,7 +45,7 @@ function init() {
     
     // Жорстко задаємо порядок: 0 - Фастфуд, 1 - Пиво, 2 - Тортик
     const modelPaths = [
-        'models/fastfood/stylized_fastfood_set.glb',
+        'models/fastfood/low_poly_hamburger.glb',
         'models/beer/roxie_rootbeer.glb',
         'models/cake/valentines_birthday_ice_cream_cake.glb'
     ];
